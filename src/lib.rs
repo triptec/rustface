@@ -19,6 +19,7 @@
 extern crate byteorder;
 extern crate num;
 extern crate rayon;
+extern crate serde;
 
 mod classifier;
 mod common;

@@ -20,9 +20,11 @@ mod image_pyramid;
 
 use std::mem;
 
+use serde::{Serialize, Deserialize};
+
 pub use self::image_pyramid::{resize_image, ImageData, ImagePyramid};
 
-#[derive(Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Rectangle {
     x: i32,
     y: i32,
@@ -73,7 +75,7 @@ impl Rectangle {
     }
 }
 
-#[derive(Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug)]
 pub struct FaceInfo {
     bbox: Rectangle,
     roll: f64,
